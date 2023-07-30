@@ -17690,6 +17690,9 @@
   (gr_text "GND" (at 133.5 115.5) (layer "F.SilkS" knockout) (tstamp ecc2124e-80af-4388-bed3-99b642d93d25)
     (effects (font (size 0.6096 0.6096) (thickness 0.1016) bold) (justify left bottom))
   )
+  (gr_text "AD5791 LINEARITY CALIBRATOR\nNNNI 3132" (at 194.75 126.75 90) (layer "F.Mask") (tstamp 0715558d-66c5-4894-bf41-4702232acd37)
+    (effects (font (size 0.8128 0.8128) (thickness 0.1524) bold) (justify left))
+  )
 
   (segment (start 154.25 105.5) (end 155 105.5) (width 0.95) (layer "F.Cu") (net 1) (tstamp 18b096b2-5bce-403b-9bee-5746e839ed8a))
   (segment (start 147.1698 102.8194) (end 147.1698 101.5) (width 0.3556) (layer "F.Cu") (net 1) (tstamp 215e24c4-767c-4ad6-9715-0d8f2959b66f))
