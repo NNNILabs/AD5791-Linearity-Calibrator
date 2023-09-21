@@ -17,29 +17,16 @@
 #define WRITE 0
 #define READ  1
 
+// Pinout
+#define SDO   3
+#define SDIN  4
+#define SCLK  5
+#define SYNC  6 // Inverting input
+#define RESET 7 // Inverting input
+#define CLEAR 8 // Inverting input
+#define LDAC  9 // Inverting input
 
-uint8_t random_bits(uint8_t num_bits, uint8_t seed) {
-    uint8_t result = 0;
-
-    for (uint8_t i = 0; i < num_bits; ++i) {
-        uint8_t pos;
-        do {
-            pos = (seed + i) % 8;
-            seed = (seed * 1103515245 + 12345) % 256;
-        } while (result & (1 << pos));
-
-        result |= (1 << pos);
-    }
-
-    return result;
-}
-
-void print_byte_as_bits(uint8_t byte) {
-    for (int i = 7; i >= 0; --i) {
-        printf("%d", (byte >> i) & 1);
-    }
-}
-
+// Life Indicator
 void core2()
 {
     while (true)
@@ -54,13 +41,10 @@ void core2()
 
 int main() 
 {
-    sleep_ms(10000);
-    uint8_t num_bits = 2;
 
-    for (uint8_t seed = 0; seed <= 255; ++seed) {
-        uint8_t random_byte = random_bits(num_bits, seed);
-        print_byte_as_bits(random_byte);
-        printf("\n");
+    while(true)
+    {
+        
     }
 
     return 0;
