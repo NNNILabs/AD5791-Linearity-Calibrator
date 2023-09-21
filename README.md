@@ -13,3 +13,5 @@ While the AD5791 is not even close in terms of absolute linearity, the fact that
 ## Application Examples
 ## Notes
 ## Links
+## Special Note: upload.bat
+This file, originally created by <utsuho>, makes it easier to upload code to the Pi Pico without using a debugger or having to unplug and replug the board. PLug in the Pico to find out which COM port it connects to, and modify line 7 accordingly. After building, simply run upload.bat. The Pico should automatically enter boot mode and the .uf2 from the build folder should automatically be uploaded. Make sure the COM port is not being accessed from another program. 
