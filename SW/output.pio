@@ -1,44 +1,49 @@
 .program output
+.side_set 2
 
-; Turn on LED for 100 cycles and off for 100 cycles.
-; At 2 kHz, this will toggle pin at 10 Hz (200 cycles / 2000 Hz = 0.1 sec)
+; sideset 2 - clock
+; sideset 1 - CS
+; pins - SDO
 
 .wrap_target
-    out pins, 8
+    bitloop:
+        out pins, 1           side 1 [1]
+        in  pins, 1           side 0
+        jmp x--   bitloop     side 0
+        out pins, 1           side 1
+        mov x,    y           side 1     ; Reload bit counter from Y
+        in  pins, 1           side 0
+        jmp !osre bitloop     side 0     ; Fall-through if TXF empties
+    public entry_point:                  ; Must set X,Y to n-2 before starting!
+        pull ifempty          side 2 [1] ; Block with CSn high (minimum 2 cycles)
+        nop                   side 0 [1] ; CSn back porch
 .wrap
 
 % c-sdk {
 
-// Helper function (for use in C program) to initialize this PIO program
-void output_program_init(PIO pio, uint sm, uint offset, uint pin, float div) {
-
-    // Sets up state machine and wrap target. This function is automatically
-    // generated in blink.pio.h.
+void output_program_init(PIO pio, uint sm, uint offset, uint pin, float div) 
+{
     pio_sm_config c = output_program_get_default_config(offset);
 
-    // Allow PIO to control GPIO pin (as output)
-    pio_gpio_init(pio, pin);
-    pio_gpio_init(pio, pin+1);
-    pio_gpio_init(pio, pin+2);
-    pio_gpio_init(pio, pin+3);
-    pio_gpio_init(pio, pin+4);
-    pio_gpio_init(pio, pin+5);
-    pio_gpio_init(pio, pin+6);
-    pio_gpio_init(pio, pin+7);
+    pio_gpio_init(pio, 3);
+    pio_gpio_init(pio, 4);
+    pio_gpio_init(pio, 5);
+    pio_gpio_init(pio, 6);
 
-    // Connect pin to SET pin (control with 'set' instruction)
-    // sm_config_set_set_pins(&c, pin, 1);
-    sm_config_set_out_pins(&c, pin, 8);
+    pio_sm_set_consecutive_pindirs(pio, sm, 4, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, 3, 1, false);
+    pio_sm_set_consecutive_pindirs(pio, sm, 5, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, 6, 1, true);
 
-    sm_config_set_out_shift(&c, false, true, 8);
+    sm_config_set_out_pins(&c, 4, 1);
+    sm_config_set_in_pins(&c, 3);
+    sm_config_set_sideset_pins(&c, 5);
 
-    // Set the pin direction to output (in PIO)
-    pio_sm_set_consecutive_pindirs(pio, sm, pin, 8, true);
+    sm_config_set_out_shift(&c, false, true, 24);
+    sm_config_set_in_shift(&c, false, true, 24);
     
-    // Set the clock divider for the state machine
     sm_config_set_clkdiv(&c, div);
 
-    // Load configuration and jump to start of the program
     pio_sm_init(pio, sm, offset, &c);
 }
 

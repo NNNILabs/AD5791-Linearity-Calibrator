@@ -454,7 +454,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "AD5791 Linearity Calibrator.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

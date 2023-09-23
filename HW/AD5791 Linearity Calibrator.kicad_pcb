@@ -326,7 +326,7 @@
       (net 2 "-15V") (pinfunction "Pin_1") (pintype "passive") (tstamp 65569ab5-e76b-4bb7-a06a-41d86f679227))
     (pad "2" thru_hole roundrect (at 0 2.54 90) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask") (roundrect_rratio 0.25)
       (net 29 "GND") (pinfunction "Pin_2") (pintype "passive") (tstamp c7c5838e-b783-46a6-ad4d-9dd51d7dc82f))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl" hide
       (opacity 0.0000)      (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -358,11 +358,6 @@
     )
     (pad "1" thru_hole oval (at 0 0) (size 5 1.5) (drill oval 4 1) (layers "*.Cu" "*.Mask")
       (net 29 "GND") (pinfunction "Pin_1") (pintype "passive") (tstamp b1ddd7ee-65f2-4e3a-8416-58cc7c8649ba))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x01_P2.54mm_Vertical.wrl"
-      (opacity 0.0000)      (offset (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
   )
 
   (footprint "Resistor_SMD:R_0603_1608Metric" (layer "F.Cu")
@@ -504,7 +499,7 @@
       (net 69 "/ISO_RX") (pinfunction "Pin_3") (pintype "passive") (tstamp bdf7e272-6b57-45e3-aca1-09a5487f7924))
     (pad "4" thru_hole roundrect (at 0 7.62 90) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask") (roundrect_rratio 0.25)
       (net 68 "/ISO_GND") (pinfunction "Pin_4") (pintype "passive") (tstamp 136741a9-2e70-4fb0-b45e-2fd3c999e0c1))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x04_P2.54mm_Vertical.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x04_P2.54mm_Vertical.wrl" hide
       (opacity 0.0000)      (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -598,7 +593,7 @@
       (net 76 "/SENSE-") (pinfunction "Pin_3") (pintype "passive") (tstamp 86ad6f3b-b618-431d-b00a-d8f000e7eed7))
     (pad "4" thru_hole roundrect (at 0 7.62 180) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask") (roundrect_rratio 0.25)
       (net 77 "/FORCE-") (pinfunction "Pin_4") (pintype "passive") (tstamp 138e1b57-25ca-4635-83c0-0367af8e99dc))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x04_P2.54mm_Vertical.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x04_P2.54mm_Vertical.wrl" hide
       (opacity 0.0000)      (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -632,7 +627,7 @@
       (net 1 "+15V") (pinfunction "Pin_1") (pintype "passive") (tstamp f14efe94-a0d5-4098-a684-7302462bf1d6))
     (pad "2" thru_hole roundrect (at 0 2.54 270) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask") (roundrect_rratio 0.25)
       (net 29 "GND") (pinfunction "Pin_2") (pintype "passive") (tstamp 44ff9860-da12-40c4-94a2-0b4fbf350fb7))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl" hide
       (opacity 0.0000)      (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1674,11 +1669,6 @@
     )
     (pad "1" thru_hole oval (at 0 0) (size 5 1.5) (drill oval 4 1) (layers "*.Cu" "*.Mask")
       (net 29 "GND") (pinfunction "Pin_1") (pintype "passive") (tstamp 7ebed5ba-447e-402b-aa17-9bf728b19ecf))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x01_P2.54mm_Vertical.wrl"
-      (opacity 0.0000)      (offset (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
   )
 
   (footprint "Resistor_SMD:R_0603_1608Metric" (layer "F.Cu")
@@ -2154,11 +2144,6 @@
     )
     (pad "1" thru_hole oval (at 0 0) (size 5 1.5) (drill oval 4 1) (layers "*.Cu" "*.Mask")
       (net 29 "GND") (pinfunction "Pin_1") (pintype "passive") (tstamp 55e23b3f-c83c-421d-9d32-486dcf09d11d))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x01_P2.54mm_Vertical.wrl"
-      (opacity 0.0000)      (offset (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
   )
 
   (footprint "LOGO" (layer "F.Cu")
@@ -16112,11 +16097,6 @@
       (net 21 "unconnected-(U1-SWDIO-Pad43)") (pinfunction "SWDIO") (pintype "bidirectional") (tstamp bb970641-e1db-4664-8de2-f69fa05f2667))
     (pad "43" smd roundrect (at 2.54 23.9 90) (size 3.5 1.7) (drill (offset -0.9 0)) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)
       (net 21 "unconnected-(U1-SWDIO-Pad43)") (pinfunction "SWDIO") (pintype "bidirectional") (tstamp 8a8ae3f0-3962-4614-ac8d-e221b37a4540))
-    (model "C:/Users/ncara/OneDrive/IoT/Tools/KiCad/RP-Pico Libraries/Pico.wrl"
-      (offset (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
     (model "${KIPRJMOD}/Libraries/Raspberry Pi Pico/Pico.wrl"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
@@ -16408,7 +16388,7 @@
       (net 66 "/REF") (pinfunction "Pin_1") (pintype "passive") (tstamp 467b2568-14ce-4fbd-a399-eaaab5069952))
     (pad "2" thru_hole roundrect (at 0 2.54 270) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask") (roundrect_rratio 0.25)
       (net 29 "GND") (pinfunction "Pin_2") (pintype "passive") (tstamp e6df09e2-c1ad-4157-bfec-9f24c313121c))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl" hide
       (opacity 0.0000)      (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -16702,11 +16682,6 @@
     )
     (pad "1" thru_hole oval (at 0 0) (size 5 1.5) (drill oval 4 1) (layers "*.Cu" "*.Mask")
       (net 29 "GND") (pinfunction "Pin_1") (pintype "passive") (tstamp 42617c51-2d4e-4b7e-9774-e08433ef9226))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x01_P2.54mm_Vertical.wrl"
-      (opacity 0.0000)      (offset (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
   )
 
   (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (layer "F.Cu")
@@ -16736,7 +16711,7 @@
       (net 28 "+3.3V") (pinfunction "Pin_1") (pintype "passive") (tstamp 9e2161de-0720-40a7-a997-8d87968d46f6))
     (pad "2" thru_hole roundrect (at 0 2.54 90) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask") (roundrect_rratio 0.25)
       (net 29 "GND") (pinfunction "Pin_2") (pintype "passive") (tstamp cda339b0-173b-44a9-a4bd-96db2bc86dfd))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl" hide
       (opacity 0.0000)      (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -17367,7 +17342,7 @@
       (net 29 "GND") (pinfunction "Pin_2") (pintype "passive") (tstamp 31a13f95-84d5-418b-ab20-167fe438adf3))
     (pad "3" thru_hole roundrect (at 0 5.08 180) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask") (roundrect_rratio 0.25)
       (net 25 "Net-(J2-Pin_3)") (pinfunction "Pin_3") (pintype "passive") (tstamp d60998b9-0ab1-4561-a345-ebe4c3013fd8))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x03_P2.54mm_Vertical.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x03_P2.54mm_Vertical.wrl" hide
       (opacity 0.0000)      (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -17860,9 +17835,9 @@
     (style (thickness 0.2) (arrow_length 1.27) (text_position_mode 0) (extension_height 0.58642) (extension_offset 0.5) keep_text_aligned)
   )
   (dimension (type aligned) (layer "Dwgs.User") (tstamp f891ad36-57fe-402e-9c40-924f4cfee9e5)
-    (pts (xy 108.75 71) (xy 108.75 139.25))
+    (pts (xy 108.75 71) (xy 108.75 139))
     (height 1.25)
-    (gr_text "68.2500 mm" (at 105.7 105.125 90) (layer "Dwgs.User") (tstamp f891ad36-57fe-402e-9c40-924f4cfee9e5)
+    (gr_text "68.0000 mm" (at 105.7 105 90) (layer "Dwgs.User") (tstamp f891ad36-57fe-402e-9c40-924f4cfee9e5)
       (effects (font (size 1.5 1.5) (thickness 0.3)))
     )
     (format (prefix "") (suffix "") (units 3) (units_format 1) (precision 4))
