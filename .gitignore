@@ -1,7 +1,9 @@
+#VSCode:
 sw/.vscode/
 sw/!build
 sw/build/*
 sw/!build/*.uf2
+#KiCAD:
 hw/*.000
 hw/*.bak
 hw/*.bck
