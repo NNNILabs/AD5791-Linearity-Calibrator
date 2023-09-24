@@ -72,7 +72,7 @@ int main()
     pio = pio0;
     sm = pio_claim_unused_sm(pio, true);
     offset = pio_add_program(pio, &output_program);
-    output_program_init(pio, sm, offset, SDO, (float)100);
+    output_program_init(pio, sm, offset, SDO, (float)10);
     pio_sm_set_enabled(pio, sm, true);
 
     gpio_put(RESET, 0);
@@ -82,12 +82,19 @@ int main()
     // Data: 00000000001100110010   RBUF       OPGND      DACTRI     BIN/2sC    SDODIS     LINCOMP
     uint32_t initData = initData | (1 << 1) | (0 << 2) | (0 << 3) | (1 << 4) | (0 << 5) | (0b1100 << 6);
 
-    dacWrite(WRITE, CTRL, initData);
+    dacWrite(WRITE, NOP, 0);         // Important - sets PIO pins to known state!
+    dacWrite(WRITE, CTRL, initData); // Write initial configuration data to DAC
+
+    uint32_t count = 0;
 
     while(true)
     {
-        dacWrite(WRITE, DAC, get_rand_32());
-        sleep_ms(10);
+        dacWrite(WRITE, DAC, count);
+        count = count + 1;
+        if(count > 0xFFFFF)
+        {
+            count = 0;
+        }
     }
 
     return 0;
