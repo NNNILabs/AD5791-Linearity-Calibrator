@@ -16,8 +16,8 @@
 #define SCTRL 0b100
 
 // Read/write control bit
-#define WRITE (0b0 << 3)
-#define READ  (0b1 << 3)
+#define WRITE 0b0
+#define READ  0b1
 
 // Pinout
 #define SDO   3
@@ -49,15 +49,13 @@ void core2()
     
 }
 
-void dacWrite(uint32_t data, uint8_t control)
+void dacWrite(uint32_t readwrite, uint32_t reg, uint32_t data)
 {
-    control = control | WRITE;                        // Combine read/write bit with the three register address bits
-    data = data & 0b00000000000011111111111111111111; // Truncate unused higher bits
-    data = data | (control << 20);                    // Combine read/write bit, register address, and data bit
-    data = data << 8;                                 // Aligning data correctly for PIO
-    pio_sm_put_blocking(pio, sm, data);
-    pio_sm_get_blocking(pio, sm);
-    printf("%024b\n", (data >> 8));
+    data = data % 0xFFFFF;                                                            // Remove everything except 20 data bits                                 
+    uint32_t packedData = packedData | (readwrite << 31) | (reg << 28) | (data << 8); // Pack read/write bit, register address bits and data bits
+    pio_sm_put_blocking(pio, sm, packedData);                                         // Send packed data to PIO
+    pio_sm_get_blocking(pio, sm);                                                     // SPI readback, to prevent stalling
+    printf("%032b\n", packedData);
 }
 
 int main() 
@@ -77,9 +75,18 @@ int main()
     output_program_init(pio, sm, offset, SDO, (float)100);
     pio_sm_set_enabled(pio, sm, true);
 
+    gpio_put(RESET, 0);
+    sleep_ms(10);
+    gpio_put(RESET, 1);
+
+    // Data: 00000000001100110010   RBUF       OPGND      DACTRI     BIN/2sC    SDODIS     LINCOMP
+    uint32_t initData = initData | (1 << 1) | (0 << 2) | (0 << 3) | (1 << 4) | (0 << 5) | (0b1100 << 6);
+
+    dacWrite(WRITE, CTRL, initData);
+
     while(true)
     {
-        dacWrite(get_rand_32(), DAC);
+        dacWrite(WRITE, DAC, get_rand_32());
         sleep_ms(10);
     }
 
