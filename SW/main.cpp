@@ -92,7 +92,7 @@ int main()
 
     while(true)
     {
-        newInput = scanf("%s", &inputBuffer);
+        newInput = scanf("%s", &inputBuffer, 31);
         requestedCode = atoi(inputBuffer);
         inputBuffer[32] = {0};
         dacWrite(WRITE, DAC, requestedCode);
