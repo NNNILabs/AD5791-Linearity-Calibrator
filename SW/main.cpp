@@ -87,7 +87,6 @@ int main()
     uint32_t count = 0;
 
     uint32_t requestedCode = 0;
-    uint32_t lastcode = 0;
     uint32_t newInput = 0;
     char inputBuffer[32] = {0};
 
