@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "pico/stdlib.h"
 #include "pico/multicore.h"
-#include "pico/rand.h"
 #include "hardware/pio.h"
 #include "hardware/clocks.h"
 
@@ -33,7 +33,7 @@ PIO pio;
 uint sm;
 uint offset;
 
-// Life Indicator
+// Life Indicator - use core 2 to blink built-in LED
 void core2()
 {
     gpio_init(25);
@@ -42,9 +42,9 @@ void core2()
     while (true)
     {
         gpio_put(25, 1);
-        sleep_ms(500);
+        sleep_ms(10);
         gpio_put(25, 0);
-        sleep_ms(500);
+        sleep_ms(4990);
     }
     
 }
@@ -55,7 +55,6 @@ void dacWrite(uint32_t readwrite, uint32_t reg, uint32_t data)
     uint32_t packedData = packedData | (readwrite << 31) | (reg << 28) | (data << 8); // Pack read/write bit, register address bits and data bits
     pio_sm_put_blocking(pio, sm, packedData);                                         // Send packed data to PIO
     pio_sm_get_blocking(pio, sm);                                                     // SPI readback, to prevent stalling
-    printf("%032b\n", packedData);
 }
 
 int main() 
@@ -87,14 +86,19 @@ int main()
 
     uint32_t count = 0;
 
+    uint32_t requestedCode = 0;
+    uint32_t lastcode = 0;
+    uint32_t newInput = 0;
+    char inputBuffer[32] = {0};
+
     while(true)
     {
-        dacWrite(WRITE, DAC, count);
-        count = count + 1;
-        if(count > 0xFFFFF)
-        {
-            count = 0;
-        }
+        newInput = scanf("%s", &inputBuffer);
+        requestedCode = atoi(inputBuffer);
+        inputBuffer[32] = {0};
+        dacWrite(WRITE, DAC, requestedCode);
+        //printf("Returned code: %d\n", requestedCode);
+
     }
 
     return 0;

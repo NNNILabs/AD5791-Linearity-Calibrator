@@ -58,8 +58,10 @@
       (dielectric_constraints no)
     )
     (pad_to_mask_clearance 0)
+    (aux_axis_origin 111.25 71)
+    (grid_origin 111.25 71)
     (pcbplotparams
-      (layerselection 0x00010fc_ffffffff)
+      (layerselection 0x0001000_7ffffff8)
       (plot_on_all_layers_selection 0x0000000_00000000)
       (disableapertmacros false)
       (usegerberextensions false)
@@ -86,11 +88,11 @@
       (plotinvisibletext false)
       (sketchpadsonfab false)
       (subtractmaskfromsilk false)
-      (outputformat 1)
+      (outputformat 3)
       (mirror false)
-      (drillshape 1)
+      (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "")
+      (outputdirectory "C:/Users/vivek/Desktop/")
     )
   )
 
@@ -16097,10 +16099,10 @@
       (net 21 "unconnected-(U1-SWDIO-Pad43)") (pinfunction "SWDIO") (pintype "bidirectional") (tstamp bb970641-e1db-4664-8de2-f69fa05f2667))
     (pad "43" smd roundrect (at 2.54 23.9 90) (size 3.5 1.7) (drill (offset -0.9 0)) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25)
       (net 21 "unconnected-(U1-SWDIO-Pad43)") (pinfunction "SWDIO") (pintype "bidirectional") (tstamp 8a8ae3f0-3962-4614-ac8d-e221b37a4540))
-    (model "${KIPRJMOD}/Libraries/Raspberry Pi Pico/Pico.wrl"
+    (model "${KIPRJMOD}/Libraries/Raspberry Pi Pico/Raspberry Pi Pico-R3.STEP"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 
