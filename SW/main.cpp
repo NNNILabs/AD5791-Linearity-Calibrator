@@ -96,7 +96,7 @@ int main()
         requestedCode = atoi(inputBuffer);
         inputBuffer[32] = {0};
         dacWrite(WRITE, DAC, requestedCode);
-        //printf("Returned code: %d\n", requestedCode);
+        // printf("Returned code: %d\n", requestedCode);
 
     }
 

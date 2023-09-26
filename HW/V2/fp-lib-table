@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "100mm template footprints")(type "KiCad")(uri "${KIPRJMOD}/100mm template footprints.pretty")(options "")(descr ""))
+)
