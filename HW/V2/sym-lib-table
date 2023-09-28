@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "AD5791BRUZ")(type "KiCad")(uri "${KIPRJMOD}/lib/AD5791BRUZ/AD5791BRUZ.kicad_sym")(options "")(descr ""))
+  (lib (name "MCU_RaspberryPi_and_Boards")(type "KiCad")(uri "${KIPRJMOD}/lib/Raspberry Pi Pico/MCU_RaspberryPi_and_Boards.kicad_sym")(options "")(descr ""))
+  (lib (name "Better Op-Amp")(type "KiCad")(uri "${KIPRJMOD}/lib/Single Op-amp/Better Op-Amp.kicad_sym")(options "")(descr ""))
+)

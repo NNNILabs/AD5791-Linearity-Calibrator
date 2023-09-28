@@ -23,7 +23,7 @@ hw/*.dsn
 hw/*.ses
 hw/*.xml
 hw/*.csv
-
+#V2 files (temp)
 hw/v2/*.000
 hw/v2/*.bak
 hw/v2/*.bck
