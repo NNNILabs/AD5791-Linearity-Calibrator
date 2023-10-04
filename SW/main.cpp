@@ -51,7 +51,7 @@ void core2()
 
 void dacWrite(uint32_t readwrite, uint32_t reg, uint32_t data)
 {
-    data = data % 0xFFFFF;                                                            // Remove everything except 20 data bits                                 
+    data = data % (0xFFFFF + 1);                                                          // Remove everything except 20 data bits                                 
     uint32_t packedData = packedData | (readwrite << 31) | (reg << 28) | (data << 8); // Pack read/write bit, register address bits and data bits
     pio_sm_put_blocking(pio, sm, packedData);                                         // Send packed data to PIO
     pio_sm_get_blocking(pio, sm);                                                     // SPI readback, to prevent stalling
@@ -79,7 +79,7 @@ int main()
     gpio_put(RESET, 1);
 
     // Data: 00000000001100110010   RBUF       OPGND      DACTRI     BIN/2sC    SDODIS     LINCOMP
-    uint32_t initData = initData | (1 << 1) | (0 << 2) | (0 << 3) | (1 << 4) | (0 << 5) | (0b1100 << 6);
+    uint32_t initData = initData | (1 << 1) | (0 << 2) | (0 << 3) | (1 << 4) | (0 << 5) | (0b0000 << 6);
 
     dacWrite(WRITE, NOP, 0);         // Important - sets PIO pins to known state!
     dacWrite(WRITE, CTRL, initData); // Write initial configuration data to DAC
