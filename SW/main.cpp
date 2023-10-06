@@ -51,7 +51,7 @@ void core2()
 
 void dacWrite(uint32_t readwrite, uint32_t reg, uint32_t data)
 {
-    data = data % (0xFFFFF + 1);                                                          // Remove everything except 20 data bits                                 
+    data = data % (0xFFFFF + 1);                                                      // Remove everything except 20 data bits                                 
     uint32_t packedData = packedData | (readwrite << 31) | (reg << 28) | (data << 8); // Pack read/write bit, register address bits and data bits
     pio_sm_put_blocking(pio, sm, packedData);                                         // Send packed data to PIO
     pio_sm_get_blocking(pio, sm);                                                     // SPI readback, to prevent stalling
