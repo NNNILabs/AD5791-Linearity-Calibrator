@@ -23,23 +23,4 @@ hw/*.dsn
 hw/*.ses
 hw/*.xml
 hw/*.csv
-#V2 files (temp)
-hw/v2/*.000
-hw/v2/*.bak
-hw/v2/*.bck
-hw/v2/*.kicad_pcb-bak
-hw/v2/*.kicad_sch-bak
-hw/v2/*-backups
-hw/v2/*.kicad_prl
-hw/v2/*.sch-bak
-hw/v2/*~
-hw/v2/_autosave-*
-hw/v2/*.tmp
-hw/v2/*-save.pro
-hw/v2/*-save.kicad_pcb
-hw/v2/fp-info-cache
-hw/v2/*.net
-hw/v2/*.dsn
-hw/v2/*.ses
-hw/v2/*.xml
-hw/v2/*.csv
+
