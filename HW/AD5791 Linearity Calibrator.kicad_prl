@@ -4,9 +4,7 @@
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
-    "hidden_nets": [
-      "Net-(J2-Pin_1)"
-    ],
+    "hidden_nets": [],
     "high_contrast_mode": 0,
     "net_color_mode": 1,
     "opacity": {
@@ -21,7 +19,7 @@
       "footprints": true,
       "graphics": true,
       "keepouts": true,
-      "lockedItems": false,
+      "lockedItems": true,
       "otherItems": true,
       "pads": true,
       "text": true,
@@ -66,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "ffc91f3_ffffffff",
+    "visible_layers": "ffcfdff_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
