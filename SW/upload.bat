@@ -18,10 +18,6 @@ if "%loop%"=="10" goto fail
 timeout 1 > NUL
 goto loop
 
-
-
-
-
 :fail
 echo failed to programm
 timeout 1 > NUL
