@@ -8,10 +8,14 @@ The gold standard for DMM linearity is the HP/Agilent/Keysight 3458A. This meter
 While the AD5791 is not even close in terms of absolute linearity, the fact that it can be bought for much less (around 100 Euros) and has decent long-term INL stability (0.19LSB) makes it a good choice for a linearity transfer standard.
 ## Usage
 ## List of Files
-- Hardware: KiCAD files
-- Software: C/C++ code for the Raspberry Pi Pico, UF2 file for direct upload
-- Resources: Images
+- Hardware: KiCAD schematic and PCB files, GERBER files, BOM
+- Software: C/C++ code for the Raspberry Pi Pico, .uf2 file for direct upload, upload.bat upload assistant
+- Resources: Images, ISSCC paper mirror
 ## Application Examples
+### Determining Linearity of a DMM
+Integral Non-Linearity (INL) describes how the input/output transfer function of a multimeter differs from the ideal straight line. Test methodology involves connecting a voltage source with a known linearity to the meter, and measuring meter readings at various points. Since the meter and source gains and offsets are not guaranteed to be the same, the source gain and offset has to be "normalized" to the meter gain and offset through a simple linear endpoint-fit method. Although some information at the endpoints is lost, it is most often the "shape" of the INL curve that is of interest and can be used to make further deductions.
+### Stable, Precise Voltage Source
+Given the high resolution of the AD5791 (20 bits), fine voltage steps of 20uV can be achieved. This facilitates experiments that need ultrafine voltage steps. In some cases, the DAC, with its 1us settling time, can be used to generate precision waveforms through additional code modification (Wave table -> DMA -> PIO). 
 ## Notes
 ## Links
 - [AD5791 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ad5791.pdf)
