@@ -1,9 +1,18 @@
+; SPI with Chip Select: 
+; https://github.com/raspberrypi/pico-examples/blob/master/pio/spi/spi.pio
+
+;
+; Copyright (c) 2020 Raspberry Pi (Trading) Ltd.
+;
+; SPDX-License-Identifier: BSD-3-Clause
+;
+
 .program output
 .side_set 2
 
 ; sideset 2 - clock
 ; sideset 1 - CS
-; pins - SDO
+; pins - SDIN
 
 .wrap_target
     bitloop:
@@ -21,24 +30,22 @@
 
 % c-sdk {
 
-void output_program_init(PIO pio, uint sm, uint offset, uint pin, float div) 
+void output_program_init(PIO pio, uint sm, uint offset, float div) 
 {
     pio_sm_config c = output_program_get_default_config(offset);
 
-    pio_gpio_init(pio, 3);
     pio_gpio_init(pio, 4);
     pio_gpio_init(pio, 5);
     pio_gpio_init(pio, 6);
 
     pio_sm_set_consecutive_pindirs(pio, sm, 4, 1, true);
-    pio_sm_set_consecutive_pindirs(pio, sm, 3, 1, false);
     pio_sm_set_consecutive_pindirs(pio, sm, 5, 1, true);
     pio_sm_set_consecutive_pindirs(pio, sm, 6, 1, true);
 
     sm_config_set_out_pins(&c, 4, 1);
-    sm_config_set_in_pins(&c, 3);
     sm_config_set_sideset_pins(&c, 5);
 
+    // Number of in and out shift bits determines transfer width
     sm_config_set_out_shift(&c, false, true, 24);
     sm_config_set_in_shift(&c, false, true, 24);
     
