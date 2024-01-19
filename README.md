@@ -30,6 +30,7 @@ Integral Non-Linearity (INL) describes how the input/output transfer function of
 ### Stable, Precise Voltage Source
 Given the high resolution of the AD5791 (20 bits), fine voltage steps of 20uV can be achieved. This facilitates experiments that need ultrafine voltage steps. In some cases, the DAC, with its 1us settling time, can be used to generate precision waveforms through additional code modification (Wave table -> DMA -> PIO). 
 ## Notes
+- By initializing GPIO 23 as an output and setting it high, the Raspberry Pi Pico's internal SMPS switches to PWM mode, where radiated EMI and output ripple is lower. 
 ## Links
 - [AD5791 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ad5791.pdf)
 - [ISSCC Paper](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/isscc.2013.6487734.pdf)
