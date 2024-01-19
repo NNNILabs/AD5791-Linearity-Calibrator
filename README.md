@@ -16,7 +16,7 @@ Where:
 V<sub>OUT</sub> is the desired output voltage  
 V<sub>REFP</sub> is the positive reference voltage (in this case approximately 10.5V)  
 V<sub>REFN</sub> is the negative reference voltage (in this case approximately -10.5V)  
-D is the integer digital code (0 to 2<sup>20</sup>/1048575)
+D is the integer digital code (0 to 2<sup>20</sup>/1048575)  
 For example, 0 would result in V<sub>REFN</sub> on the output, 524288 would result in ~0V, and 1048575 would result in V<sub>REFP</sub>.
 ## List of Files
 - Hardware: KiCAD schematic and PCB files, GERBER files, BOM
