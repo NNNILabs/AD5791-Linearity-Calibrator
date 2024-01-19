@@ -12,11 +12,13 @@ The DAC's transfer function is as follows:
 ```math
 V_{out} = \frac{(V_{refp} - V_{refn}) D}{2^20 - 1} + V_{refn}
 ```
-### test
 Where:
 V<sub>out</sub> is the desired output voltage
+
 V<sub>refp</sub> is the positive reference voltage (in this case approximately 10.5V)
+
 V<sub>refn</sub> is the negative reference voltage (in this case approximately -10.5V)
+
 ## List of Files
 - Hardware: KiCAD schematic and PCB files, GERBER files, BOM
 - Software: C/C++ code for the Raspberry Pi Pico, .uf2 file for direct upload, upload.bat upload assistant
