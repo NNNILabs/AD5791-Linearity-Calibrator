@@ -10,8 +10,17 @@ While the AD5791 is not even close in terms of absolute linearity, the fact that
 Power is supplied through the 3.5mm terminal block with the labels 'IN+' and 'IN-'. +/-18V is an ideal nominal supply. The DAC board is connected to a computer through the Raspberry Pi Pico controller's micro USB port. Communicating with the DAC is possible through any serial terminal. The binary code representing the desired output voltage is typed in, and the enter key is pressed to update the DAC output. The buffered DAC output is available on the 3.5mm terminal block with the labels 'OUT+' and 'OUT-'. Raw DAC output is available on the 'DAC' test point.
 The DAC's transfer function is as follows:
 ```math
-V_out = \frac{(V_refp - V_refn) D}{2^20 - 1} + V_refn
+V_{out} = \frac{(V_{refp} - V_{refn}) D}{2^20 - 1} + V_{refn}
+Where:
+V_{out} is the desired output voltage
+V_{refp} is the positive reference voltage (in this case approximately 10.5V)
+V_{refn} is the negative reference voltage (in this case approximately -10.5V)
 ```
+### test
+Where:
+V_{out} is the desired output voltage
+V_{refp} is the positive reference voltage (in this case approximately 10.5V)
+V_{refn} is the negative reference voltage (in this case approximately -10.5V)
 ## List of Files
 - Hardware: KiCAD schematic and PCB files, GERBER files, BOM
 - Software: C/C++ code for the Raspberry Pi Pico, .uf2 file for direct upload, upload.bat upload assistant
