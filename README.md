@@ -11,16 +11,12 @@ Power is supplied through the 3.5mm terminal block with the labels 'IN+' and 'IN
 The DAC's transfer function is as follows:
 ```math
 V_{out} = \frac{(V_{refp} - V_{refn}) D}{2^20 - 1} + V_{refn}
-Where:
-V_{out} is the desired output voltage
-V_{refp} is the positive reference voltage (in this case approximately 10.5V)
-V_{refn} is the negative reference voltage (in this case approximately -10.5V)
 ```
 ### test
 Where:
-V_{out} is the desired output voltage
-V_{refp} is the positive reference voltage (in this case approximately 10.5V)
-V_{refn} is the negative reference voltage (in this case approximately -10.5V)
+```math V_{out}``` is the desired output voltage
+```math V_{refp}``` is the positive reference voltage (in this case approximately 10.5V)
+```math V_{refn}``` is the negative reference voltage (in this case approximately -10.5V)
 ## List of Files
 - Hardware: KiCAD schematic and PCB files, GERBER files, BOM
 - Software: C/C++ code for the Raspberry Pi Pico, .uf2 file for direct upload, upload.bat upload assistant
