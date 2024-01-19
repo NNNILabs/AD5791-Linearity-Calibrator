@@ -7,7 +7,11 @@ Portable voltage, current and resistance standards exist and can be bought for a
 The gold standard for DMM linearity is the HP/Agilent/Keysight 3458A. This meter costs upwards of several thousand Euros and is out of reach for most people.
 While the AD5791 is not even close in terms of absolute linearity, the fact that it can be bought for much less (around 100 Euros) and has decent long-term INL stability (0.19LSB) makes it a good choice for a linearity transfer standard.
 ## Usage
-Power is supplied through the 3.5mm terminal block with the labels 'IN+' and 'IN-'. +/-18V is an ideal nominal supply. The DAC board is connected to a computer through the Raspberry Pi Pico controller's micro USB port. Communicating with the DAC is possible through any serial terminal. The binary code representing the desired output voltage is typed in, and the enter key is pressed to update the DAC output. 
+Power is supplied through the 3.5mm terminal block with the labels 'IN+' and 'IN-'. +/-18V is an ideal nominal supply. The DAC board is connected to a computer through the Raspberry Pi Pico controller's micro USB port. Communicating with the DAC is possible through any serial terminal. The binary code representing the desired output voltage is typed in, and the enter key is pressed to update the DAC output. The buffered DAC output is available on the 3.5mm terminal block with the labels 'OUT+' and 'OUT-'. Raw DAC output is available on the 'DAC' test point.
+The DAC's transfer function is as follows:
+```math
+V_out = \frac{(V_refp - V_refn) D}{2^20 - 1} + V_refn
+```
 ## List of Files
 - Hardware: KiCAD schematic and PCB files, GERBER files, BOM
 - Software: C/C++ code for the Raspberry Pi Pico, .uf2 file for direct upload, upload.bat upload assistant
