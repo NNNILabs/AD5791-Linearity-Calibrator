@@ -19,7 +19,7 @@ V<sub>REFP</sub> is the positive reference voltage (in this case approximately 1
 V<sub>REFN</sub> is the negative reference voltage (in this case approximately -10.5V)  
 D is the integer digital code (0 to 2<sup>20</sup>/1048575)  
   
-For example, 0 would result in V<sub>REFN</sub> on the output, 524288 would result in ~0V, and 1048575 would result in V<sub>REFP</sub>.
+For example, 0 would result in V<sub>REFN</sub> on the output, 524288 would result in ~0V, and 1048575 would result in V<sub>REFP</sub>. Each step is therefore approximately 20uV.
 ## List of Files
 - Hardware: KiCAD schematic and PCB files, GERBER files, BOM
 - Software: C/C++ code for the Raspberry Pi Pico, .uf2 file for direct upload, upload.bat upload assistant
