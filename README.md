@@ -12,10 +12,10 @@ The DAC's transfer function is as follows:
 ```math
 V_{out} = \frac{(V_{refp} - V_{refn}) D}{2^20 - 1} + V_{refn}
 ```
-Where:\n
-V<sub>out</sub> is the desired output voltage\n
-V<sub>refp</sub> is the positive reference voltage (in this case approximately 10.5V)\n
-V<sub>refn</sub> is the negative reference voltage (in this case approximately -10.5V)
+Where:  
+V<sub>out</sub> is the desired output voltage\n  
+V<sub>refp</sub> is the positive reference voltage (in this case approximately 10.5V)\n  
+V<sub>refn</sub> is the negative reference voltage (in this case approximately -10.5V)  
 
 ## List of Files
 - Hardware: KiCAD schematic and PCB files, GERBER files, BOM
