@@ -1,6 +1,7 @@
 [![Upload to - AISLER](https://img.shields.io/badge/Upload_to_-AISLER-ff8000)](https://aisler.net/p/new?url=https://raw.githubusercontent.com/NNNILabs/AD5791-Linearity-Calibrator/main/HW/AD5791%20Linearity%20Calibrator.kicad_pcb&ref=github)
 ### Work in Progress! 
 # AD5791 Linearity Calibrator
+![](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791LinearityCalibrator.jpg | width=200)
 ## Introduction
 Portable voltage, current and resistance standards exist and can be bought for a hole in your pocket, but linearity has exclusively been the domain of high-end bench multimeters. This project contains files for a linearity calibrator based around the AD5791BRUZ 20 bit DAC and a few assisting components. 
 ## Project Motivation
@@ -24,7 +25,7 @@ For example, 0 would result in V<sub>REFN</sub> on the output, 524288 would resu
 ## List of Files
 - Hardware: KiCAD schematic and PCB files, GERBER files, BOM
 - Software: C/C++ code for the Raspberry Pi Pico, .uf2 file for direct upload, upload.bat upload assistant
-- Resources: Images, ISSCC paper mirror
+- Resources: Images, AD5791 datasheet and ISSCC paper mirror
 ## Application Examples
 ### Determining Linearity of a DMM
 Integral Non-Linearity (INL) describes how the input/output transfer function of a multimeter differs from the ideal straight line. Test methodology involves connecting a voltage source with a known linearity to the meter, and measuring meter readings at various points. Since the meter and source gains and offsets are not guaranteed to be the same, the source gain and offset has to be "normalized" to the meter gain and offset through a simple linear endpoint-fit method. Although some information at the endpoints is lost, it is most often the "shape" of the INL curve that is of interest. The data could possibly be used to derive a transfer function to further increase DAC/ADC linearity.
