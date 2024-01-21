@@ -3,7 +3,7 @@
 # AD5791 Linearity Calibrator
 
 <p align="center">
-  <img width="200" src="https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791LinearityCalibrator.jpg">
+  <img width="400" src="https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791LinearityCalibrator.jpg">
 </p>
 
 ## Introduction
