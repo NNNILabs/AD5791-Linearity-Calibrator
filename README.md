@@ -1,7 +1,7 @@
 [![Upload to - AISLER](https://img.shields.io/badge/Upload_to_-AISLER-ff8000)](https://aisler.net/p/new?url=https://raw.githubusercontent.com/NNNILabs/AD5791-Linearity-Calibrator/main/HW/AD5791%20Linearity%20Calibrator.kicad_pcb&ref=github)
 ### Work in Progress! 
 # AD5791 Linearity Calibrator
-![](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791LinearityCalibrator.jpg | width=200)
+<img align='center' src='https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791LinearityCalibrator.jpg' width='200'>
 ## Introduction
 Portable voltage, current and resistance standards exist and can be bought for a hole in your pocket, but linearity has exclusively been the domain of high-end bench multimeters. This project contains files for a linearity calibrator based around the AD5791BRUZ 20 bit DAC and a few assisting components. 
 ## Project Motivation
