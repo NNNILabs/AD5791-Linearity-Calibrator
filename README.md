@@ -39,6 +39,6 @@ Given the high resolution of the AD5791 (20 bits), fine voltage steps of 20uV ca
 - By initializing GPIO 23 as an output and setting it high, the Raspberry Pi Pico's internal SMPS switches to PWM mode, where radiated EMI and output ripple is lower. 
 ## Links
 - [AD5791 Datasheet](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791%20Datasheet.pdf)
-- [ISSCC Paper](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/isscc.2013.6487734.pdf)
+- [ISSCC Paper](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791%20ISSCC.pdf)
 ## Special Note: upload.bat
 This file, originally created by utsuho, makes it easier to upload code to the Pi Pico without using a debugger or having to unplug and replug the board. Plug in the Pico to find out which COM port it connects to, and modify line 7 accordingly. In some cases in Windows, the drive letter might have to be changed on line 11. After building, simply run upload.bat. The Pico should automatically enter boot mode and the .uf2 from the build folder should automatically be uploaded. Make sure the COM port is not being accessed from another program. 
