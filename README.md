@@ -37,9 +37,9 @@ Integral Non-Linearity (INL) describes how the input/output transfer function of
 ### Stable, Precise Voltage Source
 Given the high resolution of the AD5791 (20 bits), fine voltage steps of 20uV can be achieved. This facilitates experiments that need ultrafine voltage steps. In some cases, the DAC, with its 1us settling time, can be used to generate precision waveforms through additional code modification (Wave table -> DMA -> PIO). 
 ## Notes
-- By initializing GPIO 23 as an output and setting it high, the Raspberry Pi Pico's internal SMPS switches to PWM mode, where radiated EMI and output ripple is lower. 
+- By initializing GPIO 23 as an output and setting it high, the Raspberry Pi Pico's internal SMPS switches to PWM mode, where radiated EMI and output ripple is lower.
+- PCB template is a modified version of [Mark's Protocard template](https://github.com/macaba/Nuts/tree/main/kicad-templates).
+- [upload.bat](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/SW/upload.bat) was created by Utsuho, and faciliates hands-free upload to the Pico. The COM port the Pico is connected to and the drive letter are entered in lines 7 and 11 respectively. After the software is built, upload.bat is run from the terminal by doing '.\upload.bat' on Windows. The Pico enters boot mode and the .uf2 from the build folder is automatically uploaded. Make sure the COM port is not being accessed by other programs.
 ## Links
 - [AD5791 Datasheet](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791%20Datasheet.pdf)
 - [ISSCC Paper](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791%20ISSCC.pdf)
-## Special Note: upload.bat
-This file, originally created by utsuho, makes it easier to upload code to the Pi Pico without using a debugger or having to unplug and replug the board. Plug in the Pico to find out which COM port it connects to, and modify line 7 accordingly. In some cases in Windows, the drive letter might have to be changed on line 11. After building, simply run upload.bat. The Pico should automatically enter boot mode and the .uf2 from the build folder should automatically be uploaded. Make sure the COM port is not being accessed from another program. 
