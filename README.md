@@ -43,3 +43,4 @@ Given the high resolution of the AD5791 (20 bits), fine voltage steps of 20uV ca
 ## Links
 - [AD5791 Datasheet](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791%20Datasheet.pdf)
 - [ISSCC Paper](https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/AD5791%20ISSCC.pdf)
+- [Reference voltage cap](https://www.printables.com/model/746207-voltage-reference-cap)
