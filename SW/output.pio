@@ -12,7 +12,7 @@
 
 ; sideset 2 - clock
 ; sideset 1 - CS
-; pins - SDIN
+; pins      - SDIN
 
 .wrap_target
     bitloop:

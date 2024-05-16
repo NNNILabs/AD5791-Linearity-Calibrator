@@ -20,7 +20,7 @@
 #define READ  0b1
 
 // Linearity compensation bits (see datasheet pg. 24: https://www.analog.com/media/en/technical-documentation/data-sheets/ad5791.pdf)
-#define LINCOMP 0b0000
+#define LINCOMP 0b1100
 
 // Pinout
 #define SDIN  4
@@ -106,10 +106,10 @@ int main()
 
     while(true)
     {
-        newInput = scanf("%s", &inputBuffer, 31);
-        requestedCode = atoi(inputBuffer);
-        inputBuffer[32] = {0};
-        dacWrite(WRITE, DAC, requestedCode);
+        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
+        requestedCode = atoi(inputBuffer);                // Convert input to integer
+        inputBuffer[32] = {0};                            // Clear input buffer
+        dacWrite(WRITE, DAC, requestedCode);              // Write requested code to DAC
         // printf("Returned code: %d\n", requestedCode);
 
     }
