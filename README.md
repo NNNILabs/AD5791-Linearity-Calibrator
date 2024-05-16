@@ -27,6 +27,14 @@ V<sub>REFN</sub> is the negative reference voltage (in this case approximately -
 D is the integer digital code (0 to 1048575)  
   
 For example, 0 would result in V<sub>REFN</sub> on the output, 524288 would result in ~0V, and 1048575 would result in V<sub>REFP</sub>. Each step is therefore approximately 20uV.
+
+### Linearity
+An example of the AD5791 DAC board was constructed and linearity was measured against a HP3458A DMM. Pre-endpoint fit was used to process the raw data from the DMM to provide a linearity chart. The starting and ending points of the linearity run (in this case, 0 and 1032192) were measured first, and used to pre-calculate m and c values that are applied to the complete run that follows. This provides an indication of drift, and if its effect on the run was larger than the peak non-linearity, in which case the run can be discarded. In this example, the drift across all five runs was around 0.3ppm, corresponding to 3uV.
+
+<p align="center">
+  <img src="https://github.com/NNNILabs/AD5791-Linearity-Calibrator/blob/main/Resources/Linearity.png">
+</p>
+
 ## List of Files
 - Hardware: KiCAD schematic and PCB files, GERBER files, BOM
 - Software: C/C++ code for the Raspberry Pi Pico, .uf2 file for direct upload, upload.bat upload assistant
