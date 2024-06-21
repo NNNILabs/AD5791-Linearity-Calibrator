@@ -1,5 +1,4 @@
 [![Upload to - AISLER](https://img.shields.io/badge/Upload_to_-AISLER-ff8000)](https://aisler.net/p/new?url=https://raw.githubusercontent.com/NNNILabs/AD5791-Linearity-Calibrator/main/HW/AD5791%20Linearity%20Calibrator.kicad_pcb&ref=github)
-### Work in Progress! 
 # AD5791 Linearity Calibrator
 
 <p align="center">
