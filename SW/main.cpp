@@ -8,6 +8,8 @@
 
 #include "output.pio.h"
 
+#include "lib/i2c_slave.h"
+
 // Register addresses
 #define NOP   0b000
 #define DAC   0b001
@@ -47,9 +49,9 @@ void core2()
     while (true)
     {
         gpio_put(25, 1);
-        sleep_ms(10);
+        sleep_ms(50);
         gpio_put(25, 0);
-        sleep_ms(4990);
+        sleep_ms(4950);
     }
     
 }
@@ -65,6 +67,7 @@ void dacWrite(uint32_t readwrite, uint32_t reg, uint32_t data)
 int main() 
 {
     stdio_init_all();
+    i2c_init();
     
     set_sys_clock_khz(200000, true);
     multicore_launch_core1(core2);
@@ -78,7 +81,7 @@ int main()
     // gpio_pull_up(RESET); // Pull RESET pin high
     // gpio_pull_up(CLEAR); // Pull CLEAR pin high
 
-    gpio_put(LDAC, 0);   // Set LDAC low to enable synchronous update
+    gpio_put(LDAC, 0);  // Set LDAC low to enable synchronous update
 
     // Initialize and configure PIO
     pio = pio0;
@@ -97,6 +100,7 @@ int main()
 
     dacWrite(WRITE, NOP, 0);         // Important - sets PIO pins to known state!
     dacWrite(WRITE, CTRL, initData); // Write initial configuration data to DAC
+    dacWrite(WRITE, DAC, 524310);    // Start at zero upon power up, value from 'Test.xlsx'
 
     uint32_t count = 0;
 
@@ -106,11 +110,19 @@ int main()
 
     while(true)
     {
-        newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
-        requestedCode = atoi(inputBuffer);                // Convert input to integer
-        inputBuffer[32] = {0};                            // Clear input buffer
-        dacWrite(WRITE, DAC, requestedCode);              // Write requested code to DAC
+        // Uncomment for USB serial control
+        // newInput = scanf("%s", &inputBuffer, 31);         // Read input from serial port
+        // requestedCode = atoi(inputBuffer);                // Convert input to integer
+        // inputBuffer[32] = {0};                            // Clear input buffer
+        // dacWrite(WRITE, DAC, requestedCode);              // Write requested code to DAC
         // printf("Returned code: %d\n", requestedCode);
+
+        // I2C peripheral control
+        while(!regs.conversionStatus);
+        sleep_ms(10);
+        dacWrite(WRITE, DAC, regs.input);
+        printf("Input register: %032b, DAC sollwert: %d\n", regs.input, (regs.input%(0xFFFFF+1)));
+        regs.conversionStatus = 0;
 
     }
 
